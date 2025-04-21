@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = `
         <header class="header">
-            <div class="logo">
+            <a href="index.html" div class="logo">
                 <img src="logo.svg" alt="Logo"> 
                 <span class="logo-text">КИБЕРВОЛОНТЕРЫ</span>
             </div>
