@@ -72,7 +72,9 @@ body {
     background-color: #00b7eb;
 }
 
-.nav-links .btn {
+.nav-links .btn,
+.nav-links .btn:visited,
+.nav-links button.btn {
     background-color: #00b7eb;
     padding: 10px 25px;
     border-radius: 5px;
@@ -80,6 +82,16 @@ body {
     font-weight: 600;
     margin-left: 15px;
     transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.nav-links .btn:hover,
+.nav-links button.btn:hover {
+    background-color: #0095c7ce;
+    color: white;
 }
 
 .nav-links .btn:hover {
@@ -874,3 +886,207 @@ body {
 .modal-dots .dot.active {
     background: #00b7eb;
 }
+
+/* Модальное окно для вступления */
+.join-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    animation: fadeIn 0.3s;
+}
+
+.join-modal-content {
+    background-color: #f9f9f9;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.join-modal h2 {
+    color: #181818;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.join-modal ul {
+    margin: 15px 0 25px;
+    padding-left: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.join-modal ul li {
+    margin-bottom: 8px;
+}
+
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.join-form input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.join-form input:focus {
+    border-color: #00b7eb;
+    outline: none;
+}
+
+.interests {
+    margin: 15px 0;
+}
+
+.interests h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #181818;
+}
+
+.interests label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    cursor: pointer;
+}
+
+.interests input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.submit-join {
+    background-color: #00b7eb;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-join:hover {
+    background-color: #0095c7;
+}
+
+.consent {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.close-join-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-join-modal:hover {
+    color: #00b7eb;
+}
+
+
+.join-form input.error {
+    border-color: #ff4d4d;
+    background-color: #fff0f0;
+}
+
+.join-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f5f5f5;
+    border: 2px solid #00b7eb;
+    border-radius: 10px;
+    padding: 15px 20px;
+    color: #181818;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeSlideIn 0.4s ease;
+}
+
+.join-message.success {
+    border-color: #28a745;
+    background-color: #eaffea;
+    color: #155724;
+}
+
+.join-message.error {
+    border-color: #dc3545;
+    background-color: #ffeaea;
+    color: #a71d2a;
+}
+
+.join-message .checkmark {
+    font-size: 22px;
+    color: #28a745;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.privacy-page {
+    padding: 20px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    flex: 1;
+  }
+
+  .privacy-page h1 {
+    font-size: 32px;
+    color: #181818;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .privacy-page h1::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background-color: #00b7eb;
+    display: block;
+    margin: 15px auto 0;
+  }
+
+  .privacy-page p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
