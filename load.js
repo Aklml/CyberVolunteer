@@ -1,24 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    if (burgerMenu) {
+        burgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.burger-menu').classList.remove('active');
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+    });
     const headerPlaceholder = document.getElementById('header');
     const footerPlaceholder = document.getElementById('footer');
     
     if (headerPlaceholder) {
-        headerPlaceholder.innerHTML = `
-        <header class="header">
-            <a href="index.html" class="logo">
-                <img src="logo.svg" alt="Logo"> 
-                <span class="logo-text">КИБЕРВОЛОНТЕРЫ</span>
-            </a>
-            <div class="nav-links">
-                <a href="news.html">НОВОСТИ</a>
-                <a href="index.html#about">О НАС</a>
-                <a href="index.html#directions">НАПРАВЛЕНИЯ</a>
-                <a href="index.html#team">КОМАНДА</a>
-                <a href="index.html#contacts">КОНТАКТЫ</a>
-                <button class="btn join-btn">ВСТУПИТЬ</button>
-            </div>
-        </header>
-        `;
+      headerPlaceholder.innerHTML = `
+      <header class="header">
+          <div class="header-top">
+              <a href="index.html" class="logo">
+                  <img src="logo.svg" alt="Logo"> 
+                  <span class="logo-text">КИБЕРВОЛОНТЕРЫ</span>
+              </a>
+              <div class="burger-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+          </div>
+          <div class="nav-links">
+              <a href="news.html">НОВОСТИ</a>
+              <a href="index.html#about">О НАС</a>
+              <a href="index.html#directions">НАПРАВЛЕНИЯ</a>
+              <a href="index.html#team">КОМАНДА</a>
+              <a href="index.html#contacts">КОНТАКТЫ</a>
+              <button class="btn join-btn">ВСТУПИТЬ</button>
+          </div>
+      </header>
+      `;
     }
     
     if (footerPlaceholder) {
@@ -84,6 +104,7 @@ scrollToTopBtn.addEventListener('click', function() {
 // Создаем модальное окно для формы вступления
 const joinModal = document.createElement('div');
 joinModal.className = 'join-modal';
+joinModal.style.display = 'none';
 joinModal.innerHTML = `
     <div class="join-modal-content">
         <span class="close-join-modal">&times;</span>
@@ -151,7 +172,7 @@ submitJoinBtn.addEventListener('click', () => {
   const fio = form.querySelector('input[placeholder="ФИО"]');
   const birth = form.querySelector('input[placeholder="ДД.ММ.ГГГГ"]');
   const phone = form.querySelector('input[placeholder="+7 777 777 77 77"]');
-  const social = form.querySelector('input[placeholder="@tg, @vk, @ok и др."]');
+  const social = form.querySelector('input[placeholder="@tg, @vk, @ok, и др."]');
   const allInputs = [fio, birth, phone, social];
   let hasError = false;
 
@@ -187,6 +208,7 @@ submitJoinBtn.addEventListener('click', () => {
       form.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
       submitJoinBtn.disabled = false;
       joinModalElement.style.display = 'none';
+      joinModalElement.style.display = 'none'; 
       document.body.style.overflow = 'auto';
   }, 2000);
 });
@@ -201,3 +223,4 @@ document.querySelectorAll('.join-form input').forEach(input => {
       }
   });
 });
+
