@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = `
         <header class="header">
-            <a href="index.html" div class="logo">
+            <a href="index.html" class="logo">
                 <img src="logo.svg" alt="Logo"> 
                 <span class="logo-text">КИБЕРВОЛОНТЕРЫ</span>
-            </div>
+            </a>
             <div class="nav-links">
                 <a href="news.html">НОВОСТИ</a>
                 <a href="index.html#about">О НАС</a>
