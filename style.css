@@ -1128,6 +1128,13 @@ body {
         padding: 12px 20px;
     }
     
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
     .nav-links {
         display: none;
         position: absolute;
@@ -1167,6 +1174,8 @@ body {
         height: 20px;
         cursor: pointer;
         z-index: 101;
+        margin-left: auto; /* Перемещает вправо */
+        margin-right: 15px; /* Отступ от края */
     }
     
     .burger-menu span {
@@ -1187,6 +1196,11 @@ body {
         transform: rotate(-45deg) translate(7px, -7px);
     }
     
+    .logo {
+        margin-right: auto; 
+    }
+
+
     .hero {
         height: 80vh;
     }
